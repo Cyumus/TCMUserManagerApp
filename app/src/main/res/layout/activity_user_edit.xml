@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.UserEdit">
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="25dp"
+        android:layout_marginEnd="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:id="@+id/nameTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_tag"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="38dp"
+        android:layout_alignBaseline="@+id/nameInput"
+        android:layout_alignBottom="@+id/nameInput"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="31dp" />
+
+    <TextView
+        android:id="@+id/surnameTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="@string/surname_tag"
+        android:layout_below="@+id/nameInput"
+        android:layout_alignStart="@+id/nameTag" />
+
+    <EditText
+        android:id="@+id/surnameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:layout_alignBaseline="@+id/surnameTag"
+        android:layout_alignBottom="@+id/surnameTag"
+        android:layout_alignStart="@+id/nameInput" />
+
+    <TextView
+        android:id="@+id/phoneTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="@string/phone_tag"
+        android:layout_below="@+id/surnameInput"
+        android:layout_alignStart="@+id/surnameTag" />
+
+    <EditText
+        android:id="@+id/phoneInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:layout_alignBaseline="@+id/phoneTag"
+        android:layout_alignBottom="@+id/phoneTag"
+        android:layout_alignStart="@+id/surnameInput" />
+
+    <EditText
+        android:id="@+id/dniInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:layout_below="@+id/phoneInput"
+        android:layout_alignStart="@+id/phoneInput" />
+
+    <TextView
+        android:id="@+id/dniTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dni_tag"
+        android:layout_alignBaseline="@+id/dniInput"
+        android:layout_alignBottom="@+id/dniInput"
+        android:layout_alignStart="@+id/phoneTag" />
+
+    <EditText
+        android:id="@+id/gradeInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/dniInput"
+        android:layout_below="@+id/dniInput"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/gradeTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/grade_tag"
+        android:layout_alignBaseline="@+id/gradeInput"
+        android:layout_alignBottom="@+id/gradeInput"
+        android:layout_alignStart="@+id/dniTag" />
+
+    <TextView
+        android:id="@+id/courseTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/gradeTag"
+        android:layout_below="@+id/gradeInput"
+        android:layout_marginTop="31dp"
+        android:text="@string/course_tag" />
+
+    <EditText
+        android:id="@+id/courseInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/gradeInput"
+        android:layout_below="@+id/gradeInput"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="@string/save"
+        android:layout_below="@+id/courseInput"
+        android:layout_alignStart="@+id/courseTag" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:layout_alignBaseline="@+id/saveButton"
+        android:layout_alignBottom="@+id/saveButton"
+        android:layout_alignStart="@+id/courseInput" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:layout_alignBaseline="@+id/cancelButton"
+        android:layout_alignBottom="@+id/cancelButton"
+        android:layout_alignEnd="@+id/courseInput"
+        android:layout_marginEnd="17dp" />
+</RelativeLayout>

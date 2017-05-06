@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">TCM User Manager</string>
+    <string name="name_tag">Name</string>
+    <string name="surname_tag">Surname</string>
+    <string name="phone_tag">Phone</string>
+    <string name="dni_tag">DNI</string>
+    <string name="grade_tag">Grade</string>
+    <string name="course_tag">Course</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
 </resources>
