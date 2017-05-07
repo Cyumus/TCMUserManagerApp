@@ -36,7 +36,7 @@ public class UserEdit extends AppCompatActivity {
 
         Intent received=getIntent();
         String type=received.getStringExtra("type");
-        if(type=="UPDATE"){
+        if(type.equals("UPDATE")){
             name.setText(received.getStringExtra("name"));
             surname.setText(received.getStringExtra("surname"));
             phone.setText(received.getStringExtra("phone"));
