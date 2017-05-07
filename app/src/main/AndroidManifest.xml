@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.activities.UserEdit" />
+        <activity android:name="cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.activities.StudentDetails"/>
     </application>
 
 </manifest>

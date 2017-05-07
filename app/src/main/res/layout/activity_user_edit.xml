@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id='@+id/myCoordinatorLayout'
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.activities.UserEdit">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.UserEdit">
+
+            <TextView
+                android:id="@+id/nameTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:text="@string/name_tag"
+                tools:layout_editor_absoluteX="46dp"
+                tools:layout_editor_absoluteY="38dp" />
+
+            <EditText
+                android:id="@+id/nameInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="22dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/name_tag"
+                tools:layout_editor_absoluteX="150dp"
+                tools:layout_editor_absoluteY="25dp" />
+
+            <TextView
+                android:id="@+id/surnameTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:text="@string/surname_tag" />
+
+            <EditText
+                android:id="@+id/surnameInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/surname_tag" />
+
+            <TextView
+                android:id="@+id/phoneTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33dp"
+                android:text="@string/phone_tag" />
+
+            <EditText
+                android:id="@+id/phoneInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/phone_tag" />
+
+            <TextView
+                android:id="@+id/dniTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dni_tag" />
+
+            <EditText
+                android:id="@+id/dniInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/dni_tag" />
+
+            <TextView
+                android:id="@+id/gradeTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grade_tag" />
+
+            <EditText
+                android:id="@+id/gradeInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/grade_tag" />
+
+            <TextView
+                android:id="@+id/courseTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="31dp"
+                android:text="@string/course_tag" />
+
+            <EditText
+                android:id="@+id/courseInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/course_tag" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="27dp"
+                    android:text="@string/save" />
+
+                <Button
+                    android:id="@+id/cancelButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="27dp"
+                    android:text="@string/cancel" />
+
+                <Button
+                    android:id="@+id/deleteButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="27dp"
+                    android:text="@string/delete" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>
