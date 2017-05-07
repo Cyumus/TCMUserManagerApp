@@ -163,13 +163,28 @@ public class DbAdapter {
         return mDb.insert(Student.TABLE_NAME, null, initialValues);
     }
 
+    public long updateStudent(String aName, String aSurname, int aPhone, String aDni, String aGrade, int aCourse){
+        ContentValues newValues=new ContentValues();
+        newValues.put(Student.KEY_NAME, aName);
+        newValues.put(Student.KEY_SURNAME, aSurname);
+        newValues.put(Student.KEY_PHONE, aPhone);
+        newValues.put(Student.KEY_DNI, aDni);
+        newValues.put(Student.KEY_GRADE, aGrade);
+        newValues.put(Student.KEY_COURSE, aCourse);
+        return mDb.update(Student.TABLE_NAME,newValues,Student.KEY_DNI+"="+aDni,null);
+    }
     /**
      * Deletes the Student of the given row.
      * @param aRowId The row where the Student is represented
      * @return The number of rows deleted.
      */
+
     public boolean deleteStudent(long aRowId) {
         return mDb.delete(Student.TABLE_NAME, Student.KEY_ROW_ID + "=" + aRowId, null) > 0;
+    }
+
+    public boolean deleteStudentByDni(String dni){
+        return mDb.delete(Student.TABLE_NAME,Student.KEY_DNI+"="+dni,null)>0;
     }
 
     /**

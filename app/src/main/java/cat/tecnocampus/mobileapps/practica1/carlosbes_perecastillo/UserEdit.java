@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class UserEdit extends AppCompatActivity {
 
-    private final int RESULT_DELETE = -1;
+    private final int RESULT_DELETE = 3;
 
     private EditText name;
     private EditText surname;
@@ -54,12 +54,12 @@ public class UserEdit extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent result=new Intent();
-                result.putExtra("name",name.getText());
-                result.putExtra("surname",surname.getText());
-                result.putExtra("phone",phone.getText());
-                result.putExtra("dni",dni.getText());
-                result.putExtra("grade",grade.getText());
-                result.putExtra("course",course.getText());
+                result.putExtra("name",name.getText().toString());
+                result.putExtra("surname",surname.getText().toString());
+                result.putExtra("phone",phone.getText().toString());
+                result.putExtra("dni",dni.getText().toString());
+                result.putExtra("grade",grade.getText().toString());
+                result.putExtra("course",course.getText().toString());
                 setResult(RESULT_OK,result);
                 finish();
 
