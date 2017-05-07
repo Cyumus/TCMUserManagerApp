@@ -28,7 +28,7 @@ public class DbAdapter {
 
         private static final String CREATE =
                 "CREATE TABLE " + TABLE_NAME + "( " +
-                        _ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                        KEY_ROW_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                         + KEY_NAME + " TEXT NOT NULL,"+
                         KEY_SURNAME+" TEXT NOT NULL,"+
                         KEY_PHONE+" INTEGER,"+
@@ -188,11 +188,10 @@ public class DbAdapter {
      * @throws SQLException if the Student could not be found/retrieved
      */
     public Cursor fetchStudent(long aRowId) throws SQLException {
-        //Cursor cuStudent = mDb.query(true, Student.TABLE_NAME, new String[]{Student.KEY_ROW_ID, Student.KEY_NAME, Student.KEY_SURNAME, Student.KEY_PHONE, Student.KEY_DNI, Student.KEY_GRADE, Student.KEY_COURSE}, Student.KEY_ROW_ID + "=" + aRowId, null, null, null, null, null);
-        Cursor cuStudent = mDb.query(Student.TABLE_NAME, new String []{Student.KEY_ROW_ID, Student.KEY_NAME, Student.KEY_SURNAME, Student.KEY_PHONE, Student.KEY_DNI, Student.KEY_GRADE, Student.KEY_COURSE}, Student.KEY_ROW_ID + " = ? ", new String [] {String.valueOf(0)}, null, null, null, null);
+        Cursor cuStudent = mDb.query(true,Student.TABLE_NAME, new String []{Student.KEY_ROW_ID, Student.KEY_NAME, Student.KEY_SURNAME, Student.KEY_PHONE, Student.KEY_DNI, Student.KEY_GRADE, Student.KEY_COURSE}, Student.KEY_ROW_ID + " = ? ", new String [] {String.valueOf(aRowId+1)}, null, null, null, null);
         if (cuStudent != null && cuStudent.getCount()>0) {
             cuStudent.moveToFirst();
-            Log.d("SwA", cuStudent.getString(1)+"");
+            Log.d("SwA", cuStudent.getString(0)+"");
         }
         return cuStudent;
     }

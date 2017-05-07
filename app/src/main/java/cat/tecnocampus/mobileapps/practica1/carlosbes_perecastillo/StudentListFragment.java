@@ -70,8 +70,6 @@ public class StudentListFragment extends Fragment {
             }
         });
 
-
-
         dbAdapter = DbAdapter.getInstance(getContext());
         dbAdapter.open();
         dbAdapter.upgrade(); // <<< Database is being deleted because of this, use this JUST for debug purposes

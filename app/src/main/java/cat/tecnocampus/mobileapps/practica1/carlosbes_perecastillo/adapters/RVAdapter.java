@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.MainActivity;
 import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.R;
 import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.activities.StudentDetails;
+import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.activities.UserEdit;
 import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.domain.Student;
 
 /**
@@ -51,9 +52,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder>{
         holder.mRootView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                //Cursor cuStudent = DbAdapter.getInstance(v.getContext()).fetchStudent(position);
-                Cursor cuStudent = DbAdapter.getInstance(v.getContext()).fetchAllStudents();
-                cuStudent.moveToPosition(position);
+                Cursor cuStudent = DbAdapter.getInstance(v.getContext()).fetchStudent(position);
                 Intent intentStudentDetails = new Intent(v.getContext(), StudentDetails.class);
                 intentStudentDetails.putExtra(DbAdapter.Student.KEY_NAME, cuStudent.getString(cuStudent.getColumnIndex(DbAdapter.Student.KEY_NAME)));
                 intentStudentDetails.putExtra(DbAdapter.Student.KEY_SURNAME, cuStudent.getString(cuStudent.getColumnIndex(DbAdapter.Student.KEY_SURNAME)));

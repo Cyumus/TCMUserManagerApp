@@ -33,7 +33,7 @@ public class StudentDetails extends AppCompatActivity {
         Intent received=getIntent();
         name.setText(received.getStringExtra(DbAdapter.Student.KEY_NAME));
         surname.setText(received.getStringExtra(DbAdapter.Student.KEY_SURNAME));
-        phone.setText(received.getStringExtra(DbAdapter.Student.KEY_SURNAME));
+        phone.setText(received.getStringExtra(DbAdapter.Student.KEY_PHONE));
         dni.setText(received.getStringExtra(DbAdapter.Student.KEY_DNI));
         grade.setText(received.getStringExtra(DbAdapter.Student.KEY_GRADE));
         course.setText(received.getStringExtra(DbAdapter.Student.KEY_COURSE));
