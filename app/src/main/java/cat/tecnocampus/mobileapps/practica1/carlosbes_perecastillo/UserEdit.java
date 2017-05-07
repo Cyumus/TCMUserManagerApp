@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.support.design.widget.Snackbar;
 
 public class UserEdit extends AppCompatActivity {
 
@@ -18,6 +18,7 @@ public class UserEdit extends AppCompatActivity {
     private EditText dni;
     private EditText grade;
     private EditText course;
+    private Snackbar snackBar;
 
     private Button buttonOK;
     private Button buttonCancel;
@@ -53,15 +54,30 @@ public class UserEdit extends AppCompatActivity {
         buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                boolean errorFound=false;
+                String error="";
                 Intent result=new Intent();
                 result.putExtra("name",name.getText().toString());
                 result.putExtra("surname",surname.getText().toString());
-                result.putExtra("phone",phone.getText().toString());
+                if(checkValidNumber(phone.getText().toString())){
+                result.putExtra("phone",phone.getText().toString());}
+                else{
+                    errorFound=true;
+                    error+=" Phone is not a valid number; ";
+                }
                 result.putExtra("dni",dni.getText().toString());
                 result.putExtra("grade",grade.getText().toString());
-                result.putExtra("course",course.getText().toString());
+                if(checkValidNumber(course.getText().toString())){
+                result.putExtra("course",course.getText().toString());}
+                else{
+                    errorFound=true;
+                    error+=" Course is not a valid number; ";
+                }
+                if(errorFound){
+                Snackbar.make(findViewById(R.id.myCoordinatorLayout),error,Snackbar.LENGTH_SHORT).show();
+                }else{
                 setResult(RESULT_OK,result);
-                finish();
+                finish();}
 
             }
         });
@@ -84,5 +100,13 @@ public class UserEdit extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    private boolean checkValidNumber(String number){
+        try{
+            Integer.parseInt(number);
+            return true;
+        }catch(Exception e){
+            return false;
+        }
     }
 }
