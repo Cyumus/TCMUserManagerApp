@@ -18,8 +18,6 @@ public class UserEdit extends AppCompatActivity {
     private EditText dni;
     private EditText grade;
     private EditText course;
-    private Snackbar snackBar;
-
     private Button buttonOK;
     private Button buttonCancel;
     private Button buttonDelete;
