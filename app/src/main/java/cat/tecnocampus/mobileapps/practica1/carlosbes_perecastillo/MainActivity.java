@@ -55,6 +55,25 @@ public class MainActivity extends AppCompatActivity {
                 return deleted;
             }
         });
+        mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+/*@TODO Know what items are you using in the recyclerView and which properties do they have to know how to pass their complete properties to the StudentDetails activity */
+
+
+//                parent.getItemAtPosition(position);
+//
+//                Intent calling=new Intent(MainActivity.this,StudentDetails.class);
+//                calling.putExtra("name",name.getText().toString());
+//                calling.putExtra("surname",surname.getText().toString());
+//                calling.putExtra("phone",phone.getText().toString());
+//                calling.putExtra("dni",dni.getText().toString());
+//                calling.putExtra("grade",grade.getText().toString());
+//                calling.putExtra("course",course.getText().toString());
+//                startActivity(calling);
+            }
+        });
     }
 
     protected void onActivityResult(int requestCode,int resultCode,Intent data){
