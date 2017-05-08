@@ -17,8 +17,6 @@ import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.adapters.DbAd
 
 public class UserEdit extends AppCompatActivity {
 
-    private final int RESULT_DELETE = 3;
-
     private EditText name;
     private EditText surname;
     private EditText phone;
@@ -27,6 +25,16 @@ public class UserEdit extends AppCompatActivity {
     private EditText course;
     private Button buttonOK;
     private Button buttonCancel;
+
+    /**
+     * Student attributes
+     */
+    private String mName;
+    private String mSurname;
+    private String mPhone;
+    private String mDni;
+    private String mGrade;
+    private String mCourse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +51,24 @@ public class UserEdit extends AppCompatActivity {
         Intent received=getIntent();
         String type=received.getStringExtra("type");
         if(received.hasExtra("type")&&type.equals("UPDATE")){
-            name.setText(received.getStringExtra(DbAdapter.Student.KEY_NAME));
-            surname.setText(received.getStringExtra(DbAdapter.Student.KEY_SURNAME));
-            phone.setText(received.getStringExtra(DbAdapter.Student.KEY_PHONE));
-            dni.setText(received.getStringExtra(DbAdapter.Student.KEY_DNI));
-            grade.setText(received.getStringExtra(DbAdapter.Student.KEY_GRADE));
-            course.setText(received.getStringExtra(DbAdapter.Student.KEY_COURSE));
+            mName = received.getStringExtra(DbAdapter.Student.KEY_NAME);
+            mSurname = received.getStringExtra(DbAdapter.Student.KEY_SURNAME);
+            mPhone = received.getStringExtra(DbAdapter.Student.KEY_PHONE);
+            mDni = received.getStringExtra(DbAdapter.Student.KEY_DNI);
+            mGrade = received.getStringExtra(DbAdapter.Student.KEY_GRADE);
+            mCourse = received.getStringExtra(DbAdapter.Student.KEY_COURSE);
         }
+
+        if (savedInstanceState!=null){
+            savedInstanceState.get(mName);
+            savedInstanceState.get(mSurname);
+            savedInstanceState.get(mPhone);
+            savedInstanceState.get(mDni);
+            savedInstanceState.get(mGrade);
+            savedInstanceState.get(mCourse);
+        }
+
+        setAttrsToTextViews();
 
         buttonOK=(Button)findViewById(R.id.saveButton);
         buttonCancel=(Button)findViewById(R.id.cancelButton);
@@ -101,5 +120,13 @@ public class UserEdit extends AppCompatActivity {
         }catch(Exception e){
             return false;
         }
+    }
+    public void setAttrsToTextViews(){
+        name.setText(mName);
+        surname.setText(mSurname);
+        phone.setText(mPhone);
+        dni.setText(mDni);
+        grade.setText(mGrade);
+        course.setText(mCourse);
     }
 }
