@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id='@+id/userEditlandscapeLayout'
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.activities.UserEdit">
+
+    <TextView
+        android:id="@+id/nameTagLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name_tag"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="38dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/nameInputLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/name_tag"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="25dp"
+        android:layout_marginStart="19dp"
+        android:layout_alignBaseline="@+id/nameTagLandscape"
+        android:layout_alignBottom="@+id/nameTagLandscape"
+        android:layout_toEndOf="@+id/surnameTagLandscape" />
+
+    <TextView
+        android:id="@+id/surnameTagLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/surname_tag"
+        android:layout_alignBaseline="@+id/surnameInputLandscape"
+        android:layout_alignBottom="@+id/surnameInputLandscape"
+        android:layout_alignStart="@+id/nameTagLandscape" />
+
+    <EditText
+        android:id="@+id/surnameInputLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/surname_tag"
+        android:layout_below="@+id/nameInputLandscape"
+        android:layout_alignStart="@+id/nameInputLandscape"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/phoneTagLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_tag"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/surnameInputLandscape"
+        android:layout_alignStart="@+id/surnameTagLandscape" />
+
+    <EditText
+        android:id="@+id/phoneInputLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/phone_tag"
+        android:layout_alignBaseline="@+id/phoneTagLandscape"
+        android:layout_alignBottom="@+id/phoneTagLandscape"
+        android:layout_alignStart="@+id/surnameInputLandscape" />
+
+    <TextView
+        android:id="@+id/dniTagLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dni_tag"
+        android:layout_alignBaseline="@+id/nameInputLandscape"
+        android:layout_alignBottom="@+id/nameInputLandscape"
+        android:layout_toEndOf="@+id/nameInputLandscape" />
+
+    <EditText
+        android:id="@+id/dniInputLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/dni_tag"
+        android:layout_alignBaseline="@+id/dniTagLandscape"
+        android:layout_alignBottom="@+id/dniTagLandscape"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="13dp" />
+
+    <TextView
+        android:id="@+id/gradeTagLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/grade_tag"
+        android:layout_alignBaseline="@+id/surnameInputLandscape"
+        android:layout_alignBottom="@+id/surnameInputLandscape"
+        android:layout_toEndOf="@+id/surnameInputLandscape" />
+
+    <EditText
+        android:id="@+id/gradeInputLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/grade_tag"
+        android:layout_alignBaseline="@+id/gradeTagLandscape"
+        android:layout_alignBottom="@+id/gradeTagLandscape"
+        android:layout_alignStart="@+id/dniInputLandscape" />
+
+    <TextView
+        android:id="@+id/courseTagLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/course_tag"
+        android:layout_alignBaseline="@+id/phoneInputLandscape"
+        android:layout_alignBottom="@+id/phoneInputLandscape"
+        android:layout_toEndOf="@+id/phoneInputLandscape" />
+
+    <EditText
+        android:id="@+id/courseInputLandscape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/course_tag"
+        android:layout_alignBaseline="@+id/phoneInputLandscape"
+        android:layout_alignBottom="@+id/phoneInputLandscape"
+        android:layout_alignStart="@+id/gradeInputLandscape" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="42dp">
+
+        <Button
+            android:id="@+id/saveButtonLandscape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/cancelButtonLandscape"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:text="@string/cancel" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,6 +1,7 @@
 package cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.activities;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,18 +36,38 @@ public class UserEdit extends AppCompatActivity {
     private String mDni;
     private String mGrade;
     private String mCourse;
+    private boolean isLandscape;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_edit);
+        isLandscape=getResources().getConfiguration().orientation==Configuration.ORIENTATION_LANDSCAPE;
+        if(isLandscape){
+        setContentView(R.layout.activity_user_edit_landscape);
 
-        name=(EditText)this.findViewById(R.id.nameInput);
-        surname=(EditText)findViewById(R.id.surnameInput);
-        phone=(EditText)findViewById(R.id.phoneInput);
-        dni=(EditText)findViewById(R.id.dniInput);
-        grade=(EditText)findViewById(R.id.gradeInput);
-        course=(EditText)findViewById(R.id.courseInput);
+            name=(EditText)this.findViewById(R.id.nameInputLandscape);
+            surname=(EditText)findViewById(R.id.surnameInputLandscape);
+            phone=(EditText)findViewById(R.id.phoneInputLandscape);
+            dni=(EditText)findViewById(R.id.dniInputLandscape);
+            grade=(EditText)findViewById(R.id.gradeInputLandscape);
+            course=(EditText)findViewById(R.id.courseInputLandscape);
+
+            buttonOK=(Button)findViewById(R.id.saveButtonLandscape);
+            buttonCancel=(Button)findViewById(R.id.cancelButtonLandscape);
+        }
+        else{
+            setContentView(R.layout.activity_user_edit);
+            name=(EditText)this.findViewById(R.id.nameInput);
+            surname=(EditText)findViewById(R.id.surnameInput);
+            phone=(EditText)findViewById(R.id.phoneInput);
+            dni=(EditText)findViewById(R.id.dniInput);
+            grade=(EditText)findViewById(R.id.gradeInput);
+            course=(EditText)findViewById(R.id.courseInput);
+
+            buttonOK=(Button)findViewById(R.id.saveButton);
+            buttonCancel=(Button)findViewById(R.id.cancelButton);
+        }
+
 
         Intent received=getIntent();
         String type=received.getStringExtra("type");
@@ -70,8 +91,7 @@ public class UserEdit extends AppCompatActivity {
 
         setAttrsToTextViews();
 
-        buttonOK=(Button)findViewById(R.id.saveButton);
-        buttonCancel=(Button)findViewById(R.id.cancelButton);
+
 
         buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
