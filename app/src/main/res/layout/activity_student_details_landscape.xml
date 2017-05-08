@@ -10,153 +10,131 @@
     tools:context="cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.activities.StudentDetails">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp"
-        android:id="@+id/linearLayout">
-
-        <TextView
+    <TextView
             android:id="@+id/nameTag2Landscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.05"
-            android:text="@string/name_tag" />
+        android:text="@string/name_tag"
+        android:layout_marginStart="61dp"
+        android:layout_marginBottom="38dp"
+        android:layout_above="@+id/studentSurnameLandscape"
+        android:layout_alignParentStart="true" />
 
         <TextView
             android:id="@+id/studentNamelandscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/placeholder" />
-    </LinearLayout>
+            android:text="@string/placeholder"
+            android:layout_marginStart="49dp"
+            android:layout_alignBaseline="@+id/nameTag2Landscape"
+            android:layout_alignBottom="@+id/nameTag2Landscape"
+            android:layout_toEndOf="@+id/surnameTag2Landscape" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:layout_alignTop="@+id/linearLayout"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="32dp"
-        android:id="@+id/linearLayout3">
+
+
 
         <TextView
             android:id="@+id/surnameTag2Landscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.96"
-            android:text="@string/surname_tag" />
+            android:text="@string/surname_tag"
+            android:layout_alignBaseline="@+id/studentSurnameLandscape"
+            android:layout_alignBottom="@+id/studentSurnameLandscape"
+            android:layout_alignStart="@+id/nameTag2Landscape" />
 
         <TextView
             android:id="@+id/studentSurnameLandscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.00"
-            android:text="@string/placeholder" />
-    </LinearLayout>
+            android:text="@string/placeholder"
+            android:layout_above="@+id/studentPhoneLandscape"
+            android:layout_alignStart="@+id/studentNamelandscape"
+            android:layout_marginBottom="26dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:layout_alignTop="@+id/linearLayout3"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp"
-        android:id="@+id/linearLayout2">
+
 
         <TextView
             android:id="@+id/phoneTag2Landscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.03"
-            android:text="@string/phone_tag" />
+            android:text="@string/phone_tag"
+            android:layout_alignBaseline="@+id/studentPhoneLandscape"
+            android:layout_alignBottom="@+id/studentPhoneLandscape"
+            android:layout_alignStart="@+id/surnameTag2Landscape" />
 
         <TextView
             android:id="@+id/studentPhoneLandscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/placeholder" />
-    </LinearLayout>
+            android:text="@string/placeholder"
+            android:layout_marginBottom="143dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/studentSurnameLandscape" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout4"
-        android:layout_alignTop="@+id/linearLayout2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp">
+
+
 
         <TextView
             android:id="@+id/dniTag2Landscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.15"
-            android:text="@string/dni_tag" />
+            android:text="@string/dni_tag"
+            android:layout_marginStart="78dp"
+            android:layout_alignBaseline="@+id/studentDniLandscape"
+            android:layout_alignBottom="@+id/studentDniLandscape"
+            android:layout_toEndOf="@+id/studentSurnameLandscape" />
 
         <TextView
             android:id="@+id/studentDniLandscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.03"
-            android:text="@string/placeholder" />
-    </LinearLayout>
+            android:text="@string/placeholder"
+            android:layout_marginStart="41dp"
+            android:layout_alignBaseline="@+id/studentNamelandscape"
+            android:layout_alignBottom="@+id/studentNamelandscape"
+            android:layout_toEndOf="@+id/dniTag2Landscape" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_alignTop="@+id/linearLayout4"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp"
-        android:id="@+id/linearLayout5">
+
 
 
         <TextView
             android:id="@+id/gradeTag2Landscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1.01"
-            android:text="@string/grade_tag" />
+            android:text="@string/grade_tag"
+            android:layout_alignBaseline="@+id/studentGradeLandscape"
+            android:layout_alignBottom="@+id/studentGradeLandscape"
+            android:layout_alignStart="@+id/dniTag2Landscape" />
 
         <TextView
             android:id="@+id/studentGradeLandscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.97"
-            android:text="@string/placeholder" />
-    </LinearLayout>
+            android:text="@string/placeholder"
+            android:layout_alignBaseline="@+id/studentSurnameLandscape"
+            android:layout_alignBottom="@+id/studentSurnameLandscape"
+            android:layout_alignStart="@+id/studentDniLandscape" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_alignTop="@+id/linearLayout5"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp">
 
         <TextView
             android:id="@+id/courseTag2Landscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/course_tag" />
+            android:text="@string/course_tag"
+            android:layout_alignBaseline="@+id/studentCourseLandscape"
+            android:layout_alignBottom="@+id/studentCourseLandscape"
+            android:layout_alignStart="@+id/gradeTag2Landscape" />
 
         <TextView
             android:id="@+id/studentCourseLandscape"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.99"
-            android:text="@string/placeholder" />
+            android:text="@string/placeholder"
+            android:layout_alignBaseline="@+id/studentPhoneLandscape"
+            android:layout_alignBottom="@+id/studentPhoneLandscape"
+            android:layout_alignStart="@+id/studentGradeLandscape" />
 
-    </LinearLayout>
+
 
 
 </RelativeLayout>
