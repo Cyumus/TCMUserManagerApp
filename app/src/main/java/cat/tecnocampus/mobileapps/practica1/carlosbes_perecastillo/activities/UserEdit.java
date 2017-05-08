@@ -11,6 +11,10 @@ import android.support.design.widget.Snackbar;
 import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.R;
 import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.adapters.DbAdapter;
 
+/**
+ * Created by Pere Castillo on 07/05/2017.
+ */
+
 public class UserEdit extends AppCompatActivity {
 
     private final int RESULT_DELETE = 3;
@@ -23,7 +27,6 @@ public class UserEdit extends AppCompatActivity {
     private EditText course;
     private Button buttonOK;
     private Button buttonCancel;
-    private Button buttonDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,6 @@ public class UserEdit extends AppCompatActivity {
 
         buttonOK=(Button)findViewById(R.id.saveButton);
         buttonCancel=(Button)findViewById(R.id.cancelButton);
-        buttonDelete=(Button)findViewById(R.id.deleteButton);
 
         buttonOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,16 +90,6 @@ public class UserEdit extends AppCompatActivity {
                 Intent result= new Intent();
                 result.putExtra("result","Cancel");
                 setResult(RESULT_CANCELED,result);
-                finish();
-            }
-        });
-
-        buttonDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent result= new Intent();
-                result.putExtra("result","Delete");
-                setResult(RESULT_DELETE,result);
                 finish();
             }
         });

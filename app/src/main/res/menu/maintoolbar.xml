@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created by Carlos Bes on 07/05/2017-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.MainActivity">
+
+    <item
+        android:id="@+id/student_edit"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/edit"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/student_delete"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/delete"
+        app:showAsAction="ifRoom"/>
+</menu>

@@ -3,32 +3,28 @@ package cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SimpleCursorAdapter;
-
-import java.util.ArrayList;
 
 import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.adapters.DbAdapter;
 import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.adapters.RVAdapter;
-import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.domain.Student;
+import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.layouts.DividerItemDecoration;
 
 /**
- * Created by carlo on 06/05/2017.
+ * Created by Carlos Bes on 06/05/2017.
  */
-
+// todo comment
+// todo clean code
 public class StudentListFragment extends Fragment {
     private RecyclerView mStudentListView;
-    private RVAdapter mItemsAdapter;
-
+    RVAdapter mItemsAdapter;
     private GridLayoutManager mLayoutManager;
-    private DbAdapter dbAdapter;
+    private DbAdapter mDbAdapter;
 
     public StudentListFragment() {
     }
@@ -38,14 +34,14 @@ public class StudentListFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle aSavedInstanceState) {
+        super.onCreate(aSavedInstanceState);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, final ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.student_list, container, false);
+    public View onCreateView(LayoutInflater aInflater, final ViewGroup aContainer,
+                             Bundle aSavedInstanceState) {
+        View view = aInflater.inflate(R.layout.student_list, aContainer, false);
 
 
         mLayoutManager = new GridLayoutManager(getActivity(),
@@ -53,6 +49,8 @@ public class StudentListFragment extends Fragment {
 
         mStudentListView = (RecyclerView) view.findViewById(R.id.student_list);
         mStudentListView.setLayoutManager(mLayoutManager);
+
+        mStudentListView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL_LIST));
 
         mStudentListView.setOnScrollListener(new RecyclerView.OnScrollListener(){
             private int x=0,y=0;
@@ -70,29 +68,10 @@ public class StudentListFragment extends Fragment {
             }
         });
 
-        dbAdapter = DbAdapter.getInstance(getContext());
-        dbAdapter.open();
-        dbAdapter.upgrade(); // <<< Database is being deleted because of this, use this JUST for debug purposes
+        mStudentListView.setItemAnimator(new DefaultItemAnimator());
 
-        dbAdapter.createStudent("A", "A", 0, "A","A",0);
-        dbAdapter.createStudent("B", "B", 0, "B","B",0);
-        dbAdapter.createStudent("C", "C", 0, "C","C",0);
-        dbAdapter.createStudent("D", "D", 0, "D","D",0);
-        dbAdapter.createStudent("E", "E", 0, "E","E",0);
-        dbAdapter.createStudent("F", "F", 0, "F","F",0);
-        dbAdapter.createStudent("G", "G", 0, "G","G",0);
-        dbAdapter.createStudent("H", "H", 0, "H","H",0);
-        dbAdapter.createStudent("I", "I", 0, "I","I",0);
-        dbAdapter.createStudent("J", "I", 0, "I","I",0);
-        dbAdapter.createStudent("K", "I", 0, "I","I",0);
-        dbAdapter.createStudent("L", "I", 0, "I","I",0);
-        dbAdapter.createStudent("M", "I", 0, "I","I",0);
-        dbAdapter.createStudent("N", "I", 0, "I","I",0);
-        dbAdapter.createStudent("I", "I", 0, "I","I",0);
-        dbAdapter.createStudent("I", "I", 0, "I","I",0);
-        dbAdapter.createStudent("I", "I", 0, "I","I",0);
-        dbAdapter.createStudent("I", "I", 0, "I","I",0);
-
+        mDbAdapter = DbAdapter.getInstance(getContext());
+        mDbAdapter.open();
 
         fillData();
 
@@ -100,16 +79,20 @@ public class StudentListFragment extends Fragment {
     }
 
     public void fillData() {
-        Cursor cuStudents = dbAdapter.fetchAllStudents();
+        Cursor cuStudents = mDbAdapter.fetchAllStudents();
 
-        mItemsAdapter = new RVAdapter(cuStudents);
+        mItemsAdapter = new RVAdapter(this, cuStudents);
 
         mStudentListView.setAdapter(mItemsAdapter);
     }
 
+    public void updateMenu(){
+        ((MainActivity) getActivity()).updateMenu();
+    }
+
     @Override
     public void onDestroy(){
-        dbAdapter.close();
+        mDbAdapter.close();
         super.onDestroy();
     }
 }

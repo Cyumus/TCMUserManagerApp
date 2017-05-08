@@ -8,6 +8,9 @@ import android.widget.TextView;
 import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.R;
 import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.adapters.DbAdapter;
 
+/**
+ * Created by Pere Castillo on 07/05/2017.
+ */
 
 public class StudentDetails extends AppCompatActivity {
 

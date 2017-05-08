@@ -28,7 +28,7 @@ public class DbAdapter {
 
         private static final String CREATE =
                 "CREATE TABLE " + TABLE_NAME + "( " +
-                        KEY_ROW_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                        _ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                         + KEY_NAME + " TEXT NOT NULL,"+
                         KEY_SURNAME+" TEXT NOT NULL,"+
                         KEY_PHONE+" INTEGER,"+
@@ -164,6 +164,29 @@ public class DbAdapter {
     }
 
     /**
+     * Updates the Student on the Database
+     * @param aRowId The row id of the Student
+     * @param aName The name of the Student
+     * @param aSurname The surname of the Student
+     * @param aPhone The telephone number of the Student
+     * @param aDni The identification card number of the Student
+     * @param aGrade The grade that the Student is studying
+     * @param aCourse The course that the Student is coursing
+     * @return The number of rows inserted.
+     */
+    public long updateStudent(long aRowId, String aName, String aSurname, int aPhone, String aDni, String aGrade, int aCourse){
+        ContentValues initialValues = new ContentValues();
+        initialValues.put(Student.KEY_NAME, aName);
+        initialValues.put(Student.KEY_SURNAME, aSurname);
+        initialValues.put(Student.KEY_PHONE, aPhone);
+        initialValues.put(Student.KEY_DNI, aDni);
+        initialValues.put(Student.KEY_GRADE, aGrade);
+        initialValues.put(Student.KEY_COURSE, aCourse);
+
+        return mDb.update(Student.TABLE_NAME,initialValues, Student.KEY_ROW_ID+" = "+aRowId, null);
+    }
+
+    /**
      * Deletes the Student of the given row.
      * @param aRowId The row where the Student is represented
      * @return The number of rows deleted.
@@ -188,10 +211,10 @@ public class DbAdapter {
      * @throws SQLException if the Student could not be found/retrieved
      */
     public Cursor fetchStudent(long aRowId) throws SQLException {
-        Cursor cuStudent = mDb.query(true,Student.TABLE_NAME, new String []{Student.KEY_ROW_ID, Student.KEY_NAME, Student.KEY_SURNAME, Student.KEY_PHONE, Student.KEY_DNI, Student.KEY_GRADE, Student.KEY_COURSE}, Student.KEY_ROW_ID + " = ? ", new String [] {String.valueOf(aRowId+1)}, null, null, null, null);
+        //Cursor cuStudent = mDb.query(true, Student.TABLE_NAME, new String[]{Student.KEY_ROW_ID, Student.KEY_NAME, Student.KEY_SURNAME, Student.KEY_PHONE, Student.KEY_DNI, Student.KEY_GRADE, Student.KEY_COURSE}, Student.KEY_ROW_ID + "=" + aRowId, null, null, null, null, null);
+        Cursor cuStudent = mDb.query(Student.TABLE_NAME, new String []{Student.KEY_ROW_ID, Student.KEY_NAME, Student.KEY_SURNAME, Student.KEY_PHONE, Student.KEY_DNI, Student.KEY_GRADE, Student.KEY_COURSE}, Student.KEY_ROW_ID + " = "+aRowId, null, null, null, null, null);
         if (cuStudent != null && cuStudent.getCount()>0) {
             cuStudent.moveToFirst();
-            Log.d("SwA", cuStudent.getString(0)+"");
         }
         return cuStudent;
     }

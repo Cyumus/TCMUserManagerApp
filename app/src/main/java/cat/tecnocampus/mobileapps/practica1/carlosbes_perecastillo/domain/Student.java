@@ -8,9 +8,10 @@ import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 
 /**
- * Created by carlo on 07/05/2017.
+ * Created by Carlos Bes on 07/05/2017.
  */
-
+// todo comment
+// todo clean code
 public class Student {
     private SpannableStringBuilder mName;
     private SpannableStringBuilder mSurname;
