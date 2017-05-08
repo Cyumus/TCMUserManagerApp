@@ -102,13 +102,4 @@ public class UserEdit extends AppCompatActivity {
             return false;
         }
     }
-
-    @Override
-    protected void onDestroy(){
-        Intent result= new Intent();
-        result.putExtra("result","Cancel");
-        setResult(RESULT_CANCELED,result);
-        finish();
-        super.onDestroy();
-    }
 }
