@@ -18,26 +18,69 @@ import cat.tecnocampus.mobileapps.practica1.carlosbes_perecastillo.layouts.Divid
 /**
  * Created by Carlos Bes on 06/05/2017.
  */
-// todo comment
-// todo clean code
+
+/**
+ * This class is the visual and logic representation of the Student List.
+ */
 public class StudentListFragment extends Fragment {
+    /**
+     * StudentListFragment Attributes
+     * - mStudentListView. The RecyclerView with the actual Student List.
+     * - mItemsAdapter. The RecyclerView Adapter that manages this Fragment.
+     * - mLayoutManager. The GridLayoutManager used to set 1 column when it's in portrait and 2
+     * columns when it's in landscape.
+     * - mDbAdapter. The Database Adapter used to get all the data.
+     */
     private RecyclerView mStudentListView;
     RVAdapter mItemsAdapter;
     private GridLayoutManager mLayoutManager;
     private DbAdapter mDbAdapter;
 
+    /**
+     * Empty main constructor
+     */
     public StudentListFragment() {
     }
 
+    /**
+     * This function creates a new instance of the fragment.
+     * @return a new instance of the fragment.
+     */
     public static StudentListFragment newInstance() {
         return new StudentListFragment();
     }
 
+    /**
+     * This function is called when the StudentListFragment is created.
+     * @param aSavedInstanceState The old instance state before the old instance was destroyed
+     */
     @Override
     public void onCreate(Bundle aSavedInstanceState) {
         super.onCreate(aSavedInstanceState);
     }
 
+    /**
+     * This function is called when the View of the Fragment is created.
+     *
+     * It inflates the given LayoutInflater, adding it to the main view.
+     *
+     * The function gets the orientation of the device and sets 2 columns if it's in landscape and 1
+     * if it's in portrait, using the GridLayoutManager.
+     *
+     * The function adds then a DividerItemDecoration, just for having a fancy styling.
+     *
+     * The function sets a Scroll Listener to hide or show the Floating Action Button if the user
+     * scrolls the list down to avoid having an annoying button floating in front of the list.
+     *
+     * It sets the item animator.
+     *
+     * At last, it gets the Database, opens a new connection to it and fills the list with data.
+     *
+     * @param aInflater The LayoutInflater that inflates the view aContainer
+     * @param aContainer The root View that is inflated
+     * @param aSavedInstanceState The old instance state before the old instance was destroyed
+     * @return The resulting view of all this process.
+     */
     @Override
     public View onCreateView(LayoutInflater aInflater, final ViewGroup aContainer,
                              Bundle aSavedInstanceState) {
@@ -78,6 +121,10 @@ public class StudentListFragment extends Fragment {
         return view;
     }
 
+    /**
+     * This function gets all the students in the Database and sets the list to the RecyclerView
+     * adapter in order to make it to represent it in the view.
+     */
     public void fillData() {
         Cursor cuStudents = mDbAdapter.fetchAllStudents();
 
@@ -86,10 +133,18 @@ public class StudentListFragment extends Fragment {
         mStudentListView.setAdapter(mItemsAdapter);
     }
 
+    /**
+     * This function updates the Main Activity menu.
+     */
     public void updateMenu(){
         ((MainActivity) getActivity()).updateMenu();
     }
 
+    /**
+     * This function is called when the StudentListFragment is destroyed.
+     *
+     * It closes the connection with the database.
+     */
     @Override
     public void onDestroy(){
         mDbAdapter.close();
