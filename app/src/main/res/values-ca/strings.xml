@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gestió d\'Usuaris TCM</string>
+    <string name="cancel">Cancel·lar</string>
+    <string name="course_tag">Curs</string>
+    <string name="create">Crear</string>
+    <string name="delete">Borrar</string>
+    <string name="dni_tag">DNI</string>
+    <string name="edit">Editar</string>
+    <string name="grade_tag">Grau</string>
+    <string name="name_tag">Nom</string>
+    <string name="phone_tag">Telèfon</string>
+    <string name="placeholder">Text de Mostra</string>
+    <string name="save">Desar</string>
+    <string name="surname_tag">Cognom</string>
+</resources>
