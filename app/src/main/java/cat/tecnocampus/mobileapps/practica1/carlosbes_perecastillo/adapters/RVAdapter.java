@@ -60,7 +60,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder>{
         holder.mRootView.findViewById(R.id.student_details_icon).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Cursor cuStudent = DbAdapter.getInstance(v.getContext()).fetchStudent(position);
+                Cursor cuStudent = DbAdapter.getInstance(v.getContext()).fetchStudent(getIdFromPosition(position));
                 Intent intentStudentDetails = new Intent(v.getContext(), StudentDetails.class);
                 intentStudentDetails.putExtra(DbAdapter.Student.KEY_NAME, cuStudent.getString(cuStudent.getColumnIndex(DbAdapter.Student.KEY_NAME)));
                 intentStudentDetails.putExtra(DbAdapter.Student.KEY_SURNAME, cuStudent.getString(cuStudent.getColumnIndex(DbAdapter.Student.KEY_SURNAME)));
